@@ -1,12 +1,101 @@
-# React + Vite
+# Arvyrax 🌿
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Arvyrax** is a full-stack wellness session platform where users can securely create, draft, and publish wellness sessions. The platform supports rich content editing, autosave drafts, tagging, and public viewing of published sessions.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- 🔐 Secure user authentication (JWT-based)
+- 📝 Draft and auto-save wellness sessions
+- 🏷️ Tag-based categorization
+- 🌐 Public viewing of published sessions
+- 📁 JSON-based session structure
+- 🕵️‍♂️ User-specific session history
+- ⚙️ Responsive and modern UI
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠 Tech Stack
+
+### Frontend
+- React.js
+- TailwindCSS
+- Axios
+- React Router DOM
+
+### Backend
+- Node.js
+- Express.js
+- MongoDB (Mongoose)
+- JSON Web Token (JWT)
+- Multer (for file uploads if any)
+
+---
+
+## 📁 Folder Structure
+```
+arvyrax/
+│
+├── backend/
+│ ├── controllers/
+│ ├── routes/
+│ ├── models/
+│ ├── middleware/
+│ └── server.js
+│
+├── frontend/
+│ ├── components/
+│ ├── pages/
+│ ├── services/
+│ └── App.js
+│
+└── README.md
+```
+
+## 🔑 Environment Variables
+```
+PORT=5000
+
+# DB env variables
+DB_NAME= your_db_name
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_secret_key
+
+# Jwt env variables
+JWT_SECRET= your_jwt_secret
+BCRYPT_ROUNDS= no_of_bcrypt_salt_round
+JWT_EXPIRY='1d'
+
+```
+
+## Installation Guide
+```
+git clone https://github.com/RaviGupta965/arvyaX.git
+cd arvyaX
+```
+
+## Backend Setup
+```
+cd backend
+npm install
+```
+
+## Frontend Setup
+```
+cd ../frontend
+npm install
+```
+
+## Run the App
+```
+# In /backend
+node server.js
+
+# In /frontend (new terminal)
+npm run dev
+```
+
+## 🧑‍💻 Author
+Ravi Gupta
+Built with 💙 for mindful wellness experiences.
