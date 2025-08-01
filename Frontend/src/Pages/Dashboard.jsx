@@ -9,7 +9,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchPublicSessions = async () => {
       try {
-        const res = await API.get("http://localhost:5000/api/sessions/");
+        const res = await API.get("/api/sessions/");
         console.log(res.data)
         setSessions(res.data);
       } catch (err) {
