@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { showSuccess, showError, showWarn } from "../utils/toast";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import API from "../services/api";
 import { setToken } from "../services/auth";
 function Register() {
@@ -162,7 +162,7 @@ function Register() {
             </button>
             <div className="text-center">
               Already have an Account? &nbsp;
-              <a href="/login" target="_blank" className="underline text-blue-500 hover:text-blue-700">Sign-in</a>
+              <Link to="/login" className="underline text-blue-500 hover:text-blue-700">Sign-in</Link>
             </div>
           </form>
         </div>

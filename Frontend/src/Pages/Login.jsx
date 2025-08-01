@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { showSuccess, showError, showWarn } from "../utils/toast";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,Link } from "react-router-dom";
 import API from "../services/api";
 import { setToken } from "../services/auth";
 function Login() {
@@ -117,12 +117,12 @@ function Login() {
             </button>
             <div className="text-center">
               New user?{" "}
-              <a
-                href="/register" target="_blank"
+              <Link
+                to="/register"
                 className="text-blue-500 underline hover:text-blue-700"
               >
                 Sign-up
-              </a>
+              </Link>
             </div>
           </form>
         </div>
