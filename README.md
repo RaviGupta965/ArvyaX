@@ -81,6 +81,27 @@ cd backend
 npm install
 ```
 
+### 📌 API Routes
+
+#### 🔐 Auth Routes
+```
+| Method | Endpoint             | Description              |
+|--------|----------------------|--------------------------|
+| POST   | `/api/auth/register` | Register a new user      |
+| POST   | `/api/auth/login`    | Login and receive token  |
+```
+
+#### 📄 Session Routes
+```
+| Method | Endpoint                                       | Description                            |
+|--------|------------------------------------------------|----------------------------------------|
+| GET    | `/api/sessions`                                | Get all published sessions             |
+| POST   | `/api/sessions/my-sessions`                    | Get all sessions of the logged-in user |
+| GET    | `/api/sessions/my-sessions/:id`                | Get a user's session by ID             |
+| POST   | `/api/sessions/my-sessions/save-draft`         | Save a session as draft                |
+| POST   | `/api/sessions/my-sessions/publish`            | Publish a session                      |
+| DELETE | `/api/sessions/my-sessions/delete-session/:id` | Delete a user's session                |
+```
 ## Frontend Setup
 ```
 cd ../frontend
