@@ -1,0 +1,10 @@
+PORT= Port_on_which_server_runs
+
+# DB env variables
+MONGO_URI= Your_DB_URI
+DB_NAME= Your_DB_Name
+
+# Jwt env variables
+JWT_SECRET= Your_JWT_Secret
+BCRYPT_ROUNDS= Number_of_Rounds_Password_To_Be_Hashed
+JWT_EXPIRY=JWT_SECRET_Expiry
