@@ -2,7 +2,7 @@ import axios from "axios";
 import { getToken } from "./auth.js";
 
 const API = axios.create({
-  baseURL: "http://localhost:5000",
+  baseURL: "https://arvyax-backend-548d.onrender.com",
 });
 
 API.interceptors.request.use((config) => {
