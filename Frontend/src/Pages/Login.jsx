@@ -118,7 +118,7 @@ function Login() {
             <div className="text-center">
               New user?{" "}
               <a
-                href="/register"
+                href="/register" target="_blank"
                 className="text-blue-500 underline hover:text-blue-700"
               >
                 Sign-up

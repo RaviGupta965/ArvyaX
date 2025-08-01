@@ -1,17 +1,21 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { isAuthenticated, removeToken } from "../services/auth";
 import { Menu, X } from "lucide-react";
+
 const Navbar = () => {
   const [authenticated, setAuthenticated] = useState(isAuthenticated());
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
+
   const handleLogout = () => {
     removeToken();
-    setAuthenticated(false); // update UI
+    setAuthenticated(false);
+    navigate("/"); // optional: redirect after logout
   };
+
   return (
-     <nav className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-md px-4 py-3">
+    <nav className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-md px-4 py-3">
       <div className="flex items-center justify-between max-w-6xl mx-auto">
         <div className="text-xl font-bold">Arvyax</div>
 
@@ -24,9 +28,9 @@ const Navbar = () => {
 
         {/* Desktop links */}
         <div className="hidden md:flex space-x-6 items-center">
-          <a href="/" className="hover:underline">Home</a>
-          <a href="/create-session" className="hover:underline">Create Session</a>
-          <a href="/my-sessions" className="hover:underline">My Sessions</a>
+          <Link to="/" className="hover:underline">Home</Link>
+          <Link to="/create-session" className="hover:underline">Create Session</Link>
+          <Link to="/my-sessions" className="hover:underline">My Sessions</Link>
           {authenticated ? (
             <button
               onClick={handleLogout}
@@ -35,12 +39,12 @@ const Navbar = () => {
               Logout
             </button>
           ) : (
-            <button
-              onClick={() => navigate("/login")}
+            <Link
+              to="/login"
               className="bg-white text-indigo-600 font-medium px-4 py-1 rounded hover:bg-gray-100"
             >
               Login
-            </button>
+            </Link>
           )}
         </div>
       </div>
@@ -48,12 +52,15 @@ const Navbar = () => {
       {/* Mobile menu links */}
       {isOpen && (
         <div className="md:hidden mt-3 space-y-2 px-4 z-[1]">
-          <a href="/" className="block hover:underline">Home</a>
-          <a href="/create-session" className="block hover:underline">Create Session</a>
-          <a href="/my-sessions" className="block hover:underline">My Sessions</a>
+          <Link to="/" className="block hover:underline">Home</Link>
+          <Link to="/create-session" className="block hover:underline">Create Session</Link>
+          <Link to="/my-sessions" className="block hover:underline">My Sessions</Link>
           {authenticated ? (
             <button
-              onClick={handleLogout}
+              onClick={() => {
+                setIsOpen(false);
+                handleLogout();
+              }}
               className="w-full bg-white text-indigo-600 font-medium px-4 py-2 rounded hover:bg-gray-100 mt-2"
             >
               Logout
@@ -74,4 +81,5 @@ const Navbar = () => {
     </nav>
   );
 };
+
 export default Navbar;
