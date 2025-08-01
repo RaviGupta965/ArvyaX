@@ -162,7 +162,7 @@ function Register() {
             </button>
             <div className="text-center">
               Already have an Account? &nbsp;
-              <a href="/login" className="underline text-blue-500 hover:text-blue-700">Sign-in</a>
+              <a href="/login" target="_blank" className="underline text-blue-500 hover:text-blue-700">Sign-in</a>
             </div>
           </form>
         </div>
